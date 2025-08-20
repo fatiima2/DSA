@@ -31,7 +31,6 @@ public:
 			temp->data = data;
 			temp->next = nullptr;
 			head = temp;
-
 		}
 		else
 		{
@@ -40,9 +39,6 @@ public:
 			node->next = head;
 			head = node;
 		}
-
-
-
 	}
 	void insertAtLast(int data)
 	{
@@ -52,7 +48,6 @@ public:
 			temp->data = data;
 			temp->next = nullptr;
 			head = temp;
-
 		}
 		else
 		{
@@ -60,13 +55,11 @@ public:
 			while (Temp->next != nullptr)
 			{
 				Temp = Temp->next;
-
 			}
 			Node* lastNode = new Node();
 			lastNode->data = data;
 			lastNode->next = nullptr;
 			Temp->next = lastNode;
-
 		}
 	}
 	void insertAtMiddle(int data, int index)
@@ -92,7 +85,7 @@ public:
 	{
 		if (isEmpty())
 		{
-			cout << "LInkedList is free";
+			cout << "\nLInkedList is free\n";
 			return;
 		}
 		Node* temp = head;
@@ -104,6 +97,7 @@ public:
 	{
 		if (isEmpty())
 		{
+			cout << "Empty\n";
 			return;
 		}
 		Node* temp = head;
@@ -150,13 +144,84 @@ public:
 int main()
 {
 	LinkedList list;
-	list.insertAtStart(80);
-	list.insertAtLast(20);
-	list.printLinkedList();
-	list.deleteAtLast();
-	list.printLinkedList();
-	list.insertAtMiddle(45,3);
-	list.insertAtLast(89);
-	list.printLinkedList();
+	int choice, data, ind;
+	bool flag = true;
+	while (flag)
+	{
+		cout << "---------------------LinkedList Menu------------------------\n\n";
+		cout << "1-Insert at Start\n";
+		cout << "2-Insert at Last\n";
+		cout << "3-Insert at Middle\n";
+		cout << "4-Delete at Start\n";
+		cout << "5-Delete at Last\n";
+		cout << "6-Delete at Middle\n";
+		cout << "7-Print Linked List\n";
+		cout << "8-Exit\n";
+		cout << "===========================================================\n";
+		cout << "Enter your choice: ";
+		cin >> choice;
+		switch (choice)
+		{
+		case 1:
+			cout << "Enter data: ";
+			cin >> data;
+			list.insertAtStart(data);
+			break;
+			
+		case 2:
+		{
+			cout << "Enter data: ";
+			cin >> data;
+			list.insertAtLast(data);
+			break;
+		}
+		case 3:
+		{
+			cout << "Enter data: ";
+			cin >> data;
+			cout << "Enter index no: ";
+			cin >> ind;
+			list.insertAtMiddle(data,ind);
+			break;
+		}
+		case 4:
+		{
+			list.deleteAtStart();
+			break;
+		}
+		case 5:
+		{
+			list.deleteAtLast();
+			break;
+		}
+		case 6:
+		{
+			cout << "Enter index no: ";
+			cin >> ind;
+			list.deleteAtMiddle(ind);
+			break;
+		}
+		case 7:
+		{
+			list.printLinkedList();
+			break;
+		}
+		case 8:
+		{
+			flag = false;
+			break;
+		}
+		default:
+		{
+			cout << "Invalid choice\n";
+			break;
+		}
+
+		}
+		
+			
+
+
+	}
 
 }
