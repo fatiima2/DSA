@@ -27,6 +27,9 @@
     <ClCompile Include="Q2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Q3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Q7.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
